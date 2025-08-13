@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   @media(max-width:772px) {
-    font-size: 20px;
+    font-size: 18px;
   }
   span {
     display: inline-flex;
