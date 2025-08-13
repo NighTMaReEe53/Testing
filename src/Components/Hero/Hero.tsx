@@ -1,6 +1,5 @@
 import { IoIosArrowDropdown, IoIosCode } from "react-icons/io";
 import "./hero.css";
-import Naviagtion from "../Naviagtion/Naviagtion";
 import { MdOutlineDraw } from "react-icons/md";
 import { IoFlashOutline } from "react-icons/io5";
 import {
@@ -28,7 +27,6 @@ const Hero = () => {
       <span className="html">
         <FaHtml5 size={100} color="var(--mainColor)" />
       </span>
-      <Naviagtion />
       <div className="container">
         <div className="content-hero">
           <div className="text">

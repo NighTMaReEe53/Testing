@@ -15,8 +15,8 @@ header {
   &.show {
     top: 0;
     left: 0;
-    backdrop-filter: blur(12px);
-    background: #0001;
+    background: #0d0b0f;
+    box-shadow: 0 0 1px #fff;
   }
 }
 .content-header {
@@ -93,10 +93,10 @@ header {
       top: 0;
       flex-direction: column;
       height: 100%;
-      background: #300f5129;
+      background: #0000007d;
       z-index: 10;
       padding: 15px;
-      backdrop-filter: blur(7px);
+      backdrop-filter: blur(3px);
       justify-content: center;
       align-items: flex-start;
       li {
@@ -134,7 +134,7 @@ header {
   }
 }
 
-@media(min-width:993px) {
+@media (min-width: 993px) {
   .close {
     display: none !important;
   }
