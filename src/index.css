@@ -5,7 +5,6 @@
 }
 
 :root {
-  color-scheme: light dark;
   --mainColor: #9958f6;
   --whiteColor: #ffffff;
   --trans: 0.5s;
@@ -32,8 +31,7 @@ html {
 }
 
 body {
-  background: light-dark(#fff, #030303);
-  /* font-family: "Mozilla Headline", sans-serif; */
+  background: #030303;
   font-family: "Poppins", sans-serif;
 }
 
