@@ -1,0 +1,14 @@
+.copyright {
+  border-top: 1px solid #8e51ff;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    display: inline-flex;
+    margin-left: 5px;
+    color: #8e51ff;
+    align-items: center;
+    gap: 5px;
+  }
+}

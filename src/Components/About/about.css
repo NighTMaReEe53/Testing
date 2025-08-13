@@ -1,0 +1,105 @@
+.about {
+  padding: 120px 0px;
+  .main-title {
+    width: 550px;
+    @media(max-width:772px) {
+      width: 350px;
+    }
+    text-align: center;
+    margin: 0 auto 60px;
+    h2 {
+      font-weight: bold;
+      font-size: 60px;
+      letter-spacing: 1.2px;
+      color: var(--mainColor);
+      position: relative;
+      width: fit-content;
+      margin: 0 auto 10px;
+      background: var(--textLinear);
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &::before {
+        content: "";
+        position: absolute;
+        border-width: 12px;
+        border-color: transparent var(--mainColor) transparent transparent;
+        border-style: solid;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -20px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        border-width: 12px;
+        border-color: transparent transparent transparent var(--whiteColor);
+        border-style: solid;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -20px;
+      }
+    }
+    p {
+      color: #fff8;
+      line-height: 1.9;
+      font-size: 15px;
+      text-transform: capitalize;
+    }
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    .box {
+      flex-basis: 24%;
+      @media(min-width:772px) and (max-width:992px) {
+        flex-basis: 48%;
+      }
+      @media(max-width:772px) {
+        flex-basis: 100%;
+      }
+      padding: 10px 15px;
+      border: 1px solid #8e51ff;
+      border-radius: 6px;
+      transition: var(--trans);
+      &:nth-child(4) {
+        background-color: #8e51ff;
+        transform: translateY(40px);
+        @media(max-width:772px) {
+          transform: translateY(0px);
+        }
+        svg {
+          color: var(--whiteColor) !important;
+        }
+      }
+      &:nth-child(2) {
+        transform: translateY(10px);
+      } 
+      &:hover {
+        background-color: var(--mainColor);
+        svg {
+          color: var(--whiteColor) !important;
+        }
+      }
+      span {
+        display: block;
+      }
+      > * {
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 24px;
+        letter-spacing: 1.2px;
+      }
+      p {
+        font-size: 14px;
+        color: #fff8;
+        line-height: 2;
+      }
+    }
+  }
+}

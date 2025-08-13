@@ -1,0 +1,82 @@
+import { CiLight, CiPhone } from "react-icons/ci";
+import { FaCode } from "react-icons/fa";
+import { IoCloseSharp, IoHomeOutline } from "react-icons/io5";
+import "./naviagtion.css";
+import { useEffect, useState } from "react";
+import { LiaInfoSolid, LiaProjectDiagramSolid } from "react-icons/lia";
+import { MdOutlineMenuOpen } from "react-icons/md";
+
+const Naviagtion = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const HandleScrolled = () => {
+    setIsScrolled(window.scrollY > 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", HandleScrolled);
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => window.removeEventListener("scroll", HandleScrolled);
+  }, [isOpen]);
+
+  return (
+    <header className={`${isScrolled && "show"}`}>
+      <div className="container">
+        <div className="content-header">
+          <a href="#index.html" className="logo">
+            <h1>
+              <FaCode size={30} color="var(--mainColor)" />
+              Yara Kamal
+            </h1>
+          </a>
+          <ul className={`links ${isOpen && "show"}`}>
+            <span className="close" onClick={() => setIsOpen(false)}>
+              <IoCloseSharp size={35} color="#F05" />
+            </span>
+            <li>
+              <a href="#home" className="active">
+                <IoHomeOutline />
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <LiaInfoSolid />
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#project">
+                <LiaProjectDiagramSolid />
+                Project's
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <CiPhone />
+                Contact Me
+              </a>
+            </li>
+          </ul>
+          <div className="menu" onClick={() => setIsOpen(!isOpen)}>
+            <MdOutlineMenuOpen size={35} color="var(--whiteColor)" />
+          </div>
+          <div className="icon">
+            <span title="Light Mode">
+              <CiLight size={25} />
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Naviagtion;

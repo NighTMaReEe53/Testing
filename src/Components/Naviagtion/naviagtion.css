@@ -1,0 +1,141 @@
+header {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  @media (max-width: 992px) {
+    .container {
+      width: 100%;
+    }
+  }
+  &.show {
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+    background: #0001;
+  }
+}
+.content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    @media (max-width: 992px) {
+      order: 1;
+    }
+    h1 {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--textLinear);
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      font-size: 25px;
+    }
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: var(--trans);
+    .close {
+      @media (min-width: 993px) {
+        display: none;
+      }
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #f05;
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      transition: var(--trans);
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 500;
+        font-size: 15px;
+        color: var(--whiteColor);
+        opacity: 0.5;
+        transition: var(--trans);
+        svg {
+          font-size: 24px;
+        }
+        &:hover,
+        &.active {
+          opacity: 1;
+          color: var(--mainColor);
+        }
+      }
+    }
+    @media (max-width: 992px) {
+      position: fixed;
+      left: -100%;
+      width: 100%;
+      top: 0;
+      flex-direction: column;
+      height: 100%;
+      background: #300f5129;
+      z-index: 10;
+      padding: 15px;
+      backdrop-filter: blur(7px);
+      justify-content: center;
+      align-items: flex-start;
+      li {
+        width: 100%;
+        &:not(:last-child) a {
+          border-bottom: 2px solid #fff8;
+        }
+
+        a {
+          font-size: 40px;
+          padding: 10px 0px;
+          gap: 10px;
+          svg {
+            font-size: 50px;
+          }
+        }
+      }
+      &.show {
+        left: 0;
+      }
+    }
+  }
+  .menu {
+    @media (min-width: 993px) {
+      display: none;
+    }
+    cursor: pointer;
+  }
+
+  .icon {
+    cursor: pointer;
+    @media (max-width: 992px) {
+      order: 2;
+    }
+  }
+}
+
+@media(min-width:993px) {
+  .close {
+    display: none !important;
+  }
+}
