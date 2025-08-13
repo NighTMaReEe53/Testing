@@ -75,13 +75,21 @@ const Naviagtion = () => {
               <IoCloseSharp size={35} color="#F05" />
             </span>
             <li>
-              <a href="#home" className={`${active === "home" && "active"}`}>
+              <a
+                href="#home"
+                className={`${active === "home" && "active"}`}
+                onClick={() => setIsOpen(false)}
+              >
                 <IoHomeOutline />
                 Home
               </a>
             </li>
             <li>
-              <a href="#about" className={`${active === "about" && "active"}`}>
+              <a
+                href="#about"
+                className={`${active === "about" && "active"}`}
+                onClick={() => setIsOpen(false)}
+              >
                 <LiaInfoSolid />
                 About
               </a>
@@ -90,6 +98,7 @@ const Naviagtion = () => {
               <a
                 href="#skills"
                 className={`${active === "skills" && "active"}`}
+                onClick={() => setIsOpen(false)}
               >
                 <TbStars />
                 Skill's
@@ -99,6 +108,7 @@ const Naviagtion = () => {
               <a
                 href="#project"
                 className={`${active === "project" && "active"}`}
+                onClick={() => setIsOpen(false)}
               >
                 <LiaProjectDiagramSolid />
                 Project's
@@ -108,6 +118,7 @@ const Naviagtion = () => {
               <a
                 href="#contact"
                 className={`${active === "contact" && "active"}`}
+                onClick={() => setIsOpen(false)}
               >
                 <CiPhone />
                 Contact Me
