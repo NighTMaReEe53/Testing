@@ -58,24 +58,24 @@ const Hero = () => {
             </motion.p>
             <div className="info">
               <motion.span
-                initial={{ x: 3, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
+                initial={{ left: 3, opacity: 0 }}
+                whileInView={{ left: 0, opacity: 1 }}
                 transition={{ duration: 0.4 }}
               >
                 <MdOutlineDraw size={20} />
                 Design
               </motion.span>
               <motion.span
-                initial={{ y: 3, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                initial={{ right: 3, opacity: 0 }}
+                whileInView={{ right: 0, opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
               >
                 <IoIosCode size={20} />
                 React Js
               </motion.span>
               <motion.span
-                initial={{ x: -3, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
+                initial={{ left: -3, opacity: 0 }}
+                whileInView={{ left: 0, opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
                 <IoFlashOutline size={20} />
@@ -116,7 +116,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="image">
-            <img src="yara.png" alt="Uora" />
+            <img src="2.jpg" alt="Uora" />
           </div>
         </div>
       </div>
