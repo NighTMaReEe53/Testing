@@ -72,9 +72,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="down">
+      <a href="#about" className="down">
         <IoIosArrowDropdown size={40} />
-      </div>
+      </a>
     </section>
   );
 };

@@ -104,6 +104,8 @@
       @media (max-width: 772px) {
         width: 300px;
         height: 300px;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       border-radius: 50%;

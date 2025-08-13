@@ -1,8 +1,20 @@
 .about {
-  padding: 120px 0px;
+  padding: 120px 0px 60px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-color: var(--mainColor);
+    border-radius: 50%;
+    filter: blur(150px);
+  }
   .main-title {
     width: 550px;
-    @media(max-width:772px) {
+    @media (max-width: 772px) {
       width: 350px;
     }
     text-align: center;
@@ -56,10 +68,10 @@
     gap: 10px;
     .box {
       flex-basis: 24%;
-      @media(min-width:772px) and (max-width:992px) {
+      @media (min-width: 772px) and (max-width: 992px) {
         flex-basis: 48%;
       }
-      @media(max-width:772px) {
+      @media (max-width: 772px) {
         flex-basis: 100%;
       }
       padding: 10px 15px;
@@ -69,7 +81,7 @@
       &:nth-child(4) {
         background-color: #8e51ff;
         transform: translateY(40px);
-        @media(max-width:772px) {
+        @media (max-width: 772px) {
           transform: translateY(0px);
         }
         svg {
@@ -78,7 +90,14 @@
       }
       &:nth-child(2) {
         transform: translateY(10px);
-      } 
+        @media (max-width: 772px) {
+          transform: translateY(0px);
+          background-color: #8e51ff;
+          svg {
+            color: var(--whiteColor) !important;
+          }
+        }
+      }
       &:hover {
         background-color: var(--mainColor);
         svg {
