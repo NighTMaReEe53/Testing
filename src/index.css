@@ -32,6 +32,7 @@ html {
 
 body {
   background: #030303;
+  color: var(--whiteColor);
   font-family: "Poppins", sans-serif;
 }
 
