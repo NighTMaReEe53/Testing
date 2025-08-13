@@ -229,6 +229,7 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: -70px;
+    z-index: 2;
     @media (max-width: 772px) {
     }
     color: var(--mainColor);

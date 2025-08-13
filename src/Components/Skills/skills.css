@@ -1,0 +1,139 @@
+.skills {
+  padding: 60px 0px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--textLinear);
+    filter: blur(250px);
+  }
+  .container {
+    @media (max-width: 772px) {
+      border: none;
+      border-radius: 10px;
+    }
+
+    > h2 {
+      color: transparent;
+      background: var(--textLinear);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0px;
+      letter-spacing: 1.2px;
+    }
+  }
+  .content-skills {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    .box {
+      flex-basis: 32%;
+      user-select: none;
+      transition: var(--trans);
+      &:hover {
+        transform: translateY(-5px);
+      }
+      @media (min-width: 772px) and (max-width: 992px) {
+        flex-basis: 48%;
+      }
+      @media (max-width: 772px) {
+        flex-basis: 100%;
+      }
+      border: 1px solid #8b5cf6;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .text {
+        flex: 1;
+      }
+      h2 {
+        font-size: 17px;
+        color: var(--whiteColor);
+        font-weight: 500;
+      }
+      span {
+        color: #fff8;
+        font-weight: 600;
+      }
+      .progress {
+        background-color: #0004;
+        width: 100%;
+        margin-top: 4px;
+        height: 7px;
+        border-radius: 25px;
+        position: relative;
+        p {
+          background: var(--textLinear);
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0%;
+          transition: var(--trans);
+          border-radius: 25px;
+          &.element-1 {
+            transition-delay: 0.2s;
+          }
+          &.element-2 {
+            transition-delay: 0.4s;
+          }
+          &.element-3 {
+            transition-delay: 0.6s;
+          }
+          &.element-4 {
+            transition-delay: 0.8s;
+          }
+          &.element-5 {
+            transition-delay: 1s;
+          }
+          &.element-6 {
+            transition-delay: 1.2s;
+          }
+          &.element-7 {
+            transition-delay: 1.4s;
+          }
+          &.element-8 {
+            transition-delay: 1.6s;
+          }
+          &::before {
+            content: attr(data-width);
+            position: absolute;
+            right: 0;
+            background: var(--textLinear);
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            top: -30px;
+            font-size: 11px;
+            font-weight: bold;
+          }
+          &::after {
+            content: "";
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--mainColor) transparent transparent transparent;
+            position: absolute;
+            right: 14px;
+            top: -13px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import "./naviagtion.css";
 import { useEffect, useState } from "react";
 import { LiaInfoSolid, LiaProjectDiagramSolid } from "react-icons/lia";
 import { MdOutlineMenuOpen } from "react-icons/md";
+import { TbStars } from "react-icons/tb";
 
 const Naviagtion = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,8 +17,11 @@ const Naviagtion = () => {
   const HandleScrolled = () => {
     setIsScrolled(window.scrollY > 50);
 
-    const sections = ["home", "about", "projects", "contact"];
+    const sections = ["home", "about", "skills", "project", "contact"];
     const ScrollPosition = window.scrollY + 100;
+
+    const SectionSkills = document.getElementById("skills");
+    const AllProgress = document.querySelectorAll(".progress p");
 
     for (const section of sections) {
       const element = document.getElementById(section);
@@ -31,6 +35,14 @@ const Naviagtion = () => {
         ) {
           setActive(section);
           break;
+        }
+
+        if (window.scrollY > SectionSkills!.offsetTop + 10) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          AllProgress.forEach((el: any, i) => {
+            el.style.width = `${el.dataset.width}`;
+            el.classList.add(`element-${i}`);
+          });
         }
       }
     }
@@ -72,6 +84,15 @@ const Naviagtion = () => {
               <a href="#about" className={`${active === "about" && "active"}`}>
                 <LiaInfoSolid />
                 About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#skills"
+                className={`${active === "skills" && "active"}`}
+              >
+                <TbStars />
+                Skill's
               </a>
             </li>
             <li>

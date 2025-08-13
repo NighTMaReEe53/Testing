@@ -11,6 +11,7 @@ import {
   FaReact,
 } from "react-icons/fa";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { motion } from "motion/react";
 
 const Hero = () => {
   return (
@@ -30,41 +31,88 @@ const Hero = () => {
       <div className="container">
         <div className="content-hero">
           <div className="text">
-            <span className="front">
+            <motion.span
+              className="front"
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
               <IoIosCode size={20} />
               Frontend Developer
-            </span>
-            <h2>
+            </motion.span>
+            <motion.h2
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
               Hi, I'm <br /> <span className="neon-text">Yara Kamal</span>
-            </h2>
-            <p>
+            </motion.h2>
+            <motion.p
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+            >
               I craft beautiful, responsive web experiences with modern
               technologies. Passionate about creating user-friendly interfaces
               that bring ideas to life with pixel-perfect precision.
-            </p>
+            </motion.p>
             <div className="info">
-              <span>
+              <motion.span
+                initial={{ x: 3, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              >
                 <MdOutlineDraw size={20} />
                 Design
-              </span>
-              <span>
+              </motion.span>
+              <motion.span
+                initial={{ y: 3, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
                 <IoIosCode size={20} />
                 React Js
-              </span>
-              <span>
+              </motion.span>
+              <motion.span
+                initial={{ x: -3, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+              >
                 <IoFlashOutline size={20} />
                 Performance Optimization
-              </span>
+              </motion.span>
             </div>
             <div className="btns">
-              <button className="main-btn">View My Project</button>
-              <button className="secondary-btn">Download Resume</button>
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="main-btn"
+              >
+                View My Project
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+                className="secondary-btn"
+              >
+                Download Resume
+              </motion.button>
             </div>
             <div className="social">
-              <FaFacebookF size={22} color="var(--whiteColor)" />
-              <FaInstagram size={22} color="var(--whiteColor)" />
-              <FiGithub size={22} color="var(--whiteColor)" />
-              <FiLinkedin size={22} color="var(--whiteColor" />
+              <motion.span initial={{opacity: 0, x: -10}} whileInView={{opacity: 1, x: 0}} transition={{duration: 0.3}}>
+                <FaFacebookF size={22} color="var(--whiteColor)" />
+              </motion.span>
+              <motion.span initial={{opacity: 0, x: -20}} whileInView={{opacity: 1, x: 0}} transition={{duration: 0.3, delay: 0.2}}>
+                <FaInstagram size={22} color="var(--whiteColor)" />
+              </motion.span>
+              <motion.span initial={{opacity: 0, x: -30}} whileInView={{opacity: 1, x: 0}} transition={{duration: 0.3, delay: 0.4}}>
+                <FiGithub size={22} color="var(--whiteColor)" />
+              </motion.span>
+              <motion.span initial={{opacity: 0, x: -40}} whileInView={{opacity: 1, x: 0}} transition={{duration: 0.3, delay: 0.6}}>
+                <FiLinkedin size={22} color="var(--whiteColor" />
+              </motion.span>
             </div>
           </div>
           <div className="image">

@@ -1,0 +1,127 @@
+.project {
+  padding: 0px 0px 30px;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 300px;
+    height: 300px;
+    background: var(--textLinear);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(400px);
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    right: 0px;
+    width: 300px;
+    height: 300px;
+    background: var(--textLinear);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(400px);
+  }
+  .list {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    li {
+      background-color: #080808;
+      border: 1px solid var(--mainColor);
+      width: 140px;
+      color: var(--mainColor);
+      border-radius: 10px;
+      text-align: center;
+      font-size: 15px;
+      padding: 10px 15px;
+      cursor: pointer;
+      letter-spacing: 1.2px;
+      transition: var(--trans);
+      &:hover,
+      &.active {
+        background-color: var(--mainColor);
+        color: var(--whiteColor);
+      }
+      &:active {
+        scale: 0.95;
+      }
+    }
+  }
+  .content-project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    .box {
+      flex-basis: 32%;
+      @media(min-width:772px) and (max-width:992px) {
+        flex-basis: 49%;
+      }
+      @media(max-width:772px) {
+        flex-basis: 100%;
+      }
+      background: #080808;
+      transition: var(--trans);
+      &:hover {
+        transform: translateY(-5px);
+      }
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #8b5cf6;
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      h2 {
+        background: var(--textLinear);
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #fff8;
+        text-transform: capitalize;
+        font-size: 15px;
+        line-height: 2;
+      }
+      span {
+        margin-top: 10px;
+        display: inline-block;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: var(--whiteColor);
+        span {
+          background: var(--textLinear);
+          padding: 0px 10px;
+          border-radius: 4px;
+          opacity: 0.7;
+        }
+      }
+      .icons {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        svg {
+          opacity: 0.5;
+          transition: var(--trans);
+          cursor: pointer;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
