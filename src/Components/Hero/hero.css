@@ -65,52 +65,73 @@
     width: fit-content;
     z-index: 1;
     flex: 1;
+    @media (max-width: 772px) {
+      width: 300px;
+      height: 300px;
+      flex: none;
+      justify-content: flex-start;
+    }
     &::after {
       content: "";
       position: absolute;
       width: 350px;
       height: 350px;
-      @media (max-width: 772px) {
-        width: 300px;
-        height: 300px;
-      }
       background-color: var(--mainColor);
       z-index: -1;
       border-radius: 50%;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
+      @media (max-width: 772px) {
+        display: none;
+      }
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      width: 60%;
-      @media (max-width: 772px) {
-        width: 50%;
+    @media (min-width: 772px) {
+      &::before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        width: 60%;
+        @media (max-width: 772px) {
+          width: 50%;
+        }
+        height: 100%;
+        border-style: solid;
+        border-width: 15px;
+        border-image: var(--textLinear);
+        animation: rotate 2s linear infinite;
+        z-index: -1;
       }
-      height: 100%;
-      border-style: solid;
-      border-width: 15px;
-      border-image: var(--textLinear);
-      animation: rotate 2s linear infinite;
-      z-index: -1;
+    }
+
+    @media (max-width: 992px) {
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: 4px double;
+        border-color: #8e51ff transparent transparent #8e51ff;
+        border-radius: 50%;
+        animation: rotated-after 4s linear infinite;
+      }
     }
 
     img {
       width: 350px;
       height: 350px;
-      @media (max-width: 772px) {
-        width: 300px;
-        height: 300px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
 
       border-radius: 50%;
       object-fit: contain;
       bottom: -8px;
+      @media (max-width: 772px) {
+        width: 80%;
+        height: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px;
+      }
       position: relative;
     }
   }
@@ -445,5 +466,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotated-after {
+  from {
+    rotate: -360deg;
+  }
+  to {
+    rotate: 0deg;
   }
 }
