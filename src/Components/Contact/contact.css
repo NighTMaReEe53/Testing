@@ -5,7 +5,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    @media(max-width:992px) {
+    @media (max-width: 992px) {
       flex-direction: column;
     }
     flex-wrap: wrap;
@@ -13,7 +13,7 @@
     .text,
     form {
       flex-basis: 49%;
-      @media(max-width:992px) {
+      @media (max-width: 992px) {
         width: 100%;
         flex-basis: 100%;
       }
@@ -33,6 +33,13 @@
         gap: 10px;
         span {
           font-size: 30px;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #8b5cf652;
+          border-radius: 6px;
         }
       }
     }
@@ -54,7 +61,7 @@
       }
       input,
       textarea {
-        padding:  15px;
+        padding: 15px;
         border-radius: 6px;
         background: transparent;
         outline: none;
